@@ -1,8 +1,8 @@
 package filas;
 
-public class filaInt {
+public class FilaString {
     final int N = 3;
-    int [] dados = new int [N];
+    String [] dados = new String[N] ;
     int ini, fim , cont;
 
 
@@ -15,7 +15,7 @@ public class filaInt {
     public boolean isFull() {
         return (cont==N);
     }
-    public void enqueue(int elem) {
+    public void enqueue(String elem) {
         if (!isFull()) {
             dados[fim] = elem;
             cont++;
@@ -24,16 +24,17 @@ public class filaInt {
         else
             System.out.println("Queue is full");
     }
-    public int dequeue () {
-        int ele = dados[ini];
+    public String dequeue () {
+        String ele = dados[ini];
         ini = (ini + 1) % N;
         cont--;
         int elem;
 
         return ele;
     }
-
-    public void enqueue(String nome) {
+    public String first() {
+        return (dados [ini]);
     }
+
 }
 
